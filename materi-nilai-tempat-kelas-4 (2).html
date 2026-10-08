@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Materi pengenalan Matematika kelas 4 SD: mengenal nilai tempat satuan, puluhan, ratusan, dan ribuan pada bilangan sampai 9.999, lengkap dengan alat peraga interaktif dan kuis.">
+<title>Mengenal Nilai Tempat sampai Ribuan — Matematika Kelas 4</title>
+<style>
+  /* ============ DASAR ============ */
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:#f1f5fb;color:#1e293b;line-height:1.7;font-size:16px;
+  }
+  :root{
+    --biru:#2563eb; --biru-gelap:#1e3a8a; --biru-muda:#dbeafe;
+    --merah:#e11d48; --merah-muda:#ffe4e6;
+    --hijau:#059669; --hijau-muda:#d1fae5;
+    --oranye:#d97706; --oranye-muda:#fef3c7;
+    --tinta:#1e293b; --abu:#64748b; --garis:#e2e8f0;
+  }
+  .wadah{max-width:1060px;margin:0 auto;padding:0 20px}
+  section{padding:52px 0 4px;scroll-margin-top:76px}
+
+  /* ============ NAVIGASI ============ */
+  nav{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--garis);z-index:60}
+  .nav-dalam{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+  .merek{display:flex;gap:10px;align-items:center;font-weight:800;color:var(--biru-gelap);white-space:nowrap}
+  .merek-logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#2563eb,#7c3aed);
+      color:#fff;display:grid;place-items:center;font-size:12px;font-weight:800;flex-shrink:0}
+  .nav-link{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .nav-link a{padding:7px 13px;border-radius:99px;font-size:13.5px;font-weight:600;color:#475569;
+      text-decoration:none;white-space:nowrap;transition:.15s}
+  .nav-link a:hover{background:var(--biru-muda);color:var(--biru-gelap)}
+
+  /* ============ HERO ============ */
+  .hero{background:linear-gradient(135deg,#1e3a8a,#2563eb 55%,#3b82f6);color:#fff;
+      padding:66px 0 74px;position:relative;overflow:hidden}
+  .hero-deko{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+      gap:34px;font-size:190px;font-weight:800;color:rgba(255,255,255,.06);user-select:none;letter-spacing:10px}
+  .hero-dalam{position:relative;z-index:2;max-width:760px}
+  .lencana{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);
+      padding:6px 16px;border-radius:99px;font-size:13px;font-weight:700;letter-spacing:.6px}
+  .hero h1{font-size:44px;line-height:1.15;margin:18px 0 14px;font-weight:800}
+  .hero p{font-size:17px;color:#dbeafe;max-width:640px}
+  .hero-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+  .btn{display:inline-block;background:#fbbf24;color:#78350f;font-weight:800;text-decoration:none;
+      padding:13px 26px;border-radius:12px;font-size:15.5px;transition:.15s;border:none;cursor:pointer}
+  .btn:hover{background:#f59e0b;transform:translateY(-2px)}
+  .btn-tembus{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
+  .btn-tembus:hover{background:rgba(255,255,255,.12);border-color:#fff}
+  .hero-chip{display:flex;gap:10px;margin-top:34px;flex-wrap:wrap}
+  .chip-terang{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);
+      padding:7px 15px;border-radius:99px;font-size:13.5px;font-weight:600}
+
+  /* ============ JUDUL BAGIAN ============ */
+  .kepala-bagian{margin-bottom:8px}
+  .tanda{display:inline-block;padding:6px 14px;border-radius:99px;font-size:12px;font-weight:800;
+      letter-spacing:1px;text-transform:uppercase}
+  .t-biru{background:var(--biru-muda);color:var(--biru-gelap)}
+  .t-kuning{background:var(--oranye-muda);color:#92400e}
+  .t-ungu{background:#ede9fe;color:#5b21b6}
+  .t-rose{background:var(--merah-muda);color:#9f1239}
+  .t-hijau{background:var(--hijau-muda);color:#065f46}
+  .t-sian{background:#cffafe;color:#155e75}
+  .t-merah{background:#fee2e2;color:#991b1b}
+  .t-abu{background:#e2e8f0;color:#334155}
+  .judul{font-size:30px;font-weight:800;margin:12px 0 6px}
+  .subjudul{color:var(--abu);max-width:740px}
+
+  /* ============ KARTU ============ */
+  .kartu{background:#fff;border-radius:20px;padding:30px;margin-top:24px;
+      box-shadow:0 6px 24px rgba(15,23,42,.06)}
+  .kartu h3{font-size:20px;margin-bottom:12px;color:var(--biru-gelap)}
+  .kartu p{margin-bottom:12px}
+  .kartu p:last-child{margin-bottom:0}
+
+  /* ============ TUJUAN ============ */
+  .grid-tujuan{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
+  .t-kartu{background:#fff;border-radius:18px;padding:24px;box-shadow:0 6px 24px rgba(15,23,42,.06);
+      display:flex;gap:16px;align-items:flex-start;border-top:4px solid var(--biru)}
+  .t-angka{width:38px;height:38px;border-radius:50%;background:var(--biru-muda);color:var(--biru-gelap);
+      display:grid;place-items:center;font-weight:800;font-size:17px;flex-shrink:0}
+  .t-kartu h4{font-size:16.5px;margin-bottom:4px}
+  .t-kartu p{font-size:14.5px;color:var(--abu);line-height:1.55}
+
+  /* ============ KOTAK KHUSUS ============ */
+  .penting{background:#fffbeb;border:2px dashed var(--oranye);border-radius:14px;
+      padding:18px 22px;margin:20px 0}
+  .penting strong{color:#92400e}
+  .tips{background:#eff6ff;border-left:5px solid var(--biru);border-radius:0 12px 12px 0;
+      padding:15px 20px;margin:20px 0}
+  .tips strong{color:var(--biru-gelap)}
+  .catatan{background:#f0fdf4;border-left:5px solid var(--hijau);border-radius:0 12px 12px 0;
+      padding:15px 20px;margin:20px 0}
+
+  /* ============ CERITA ============ */
+  .cerita-judul{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .cerita-ikon{width:44px;height:44px;border-radius:12px;background:var(--oranye-muda);
+      display:grid;place-items:center;font-weight:800;color:#92400e;font-size:13px}
+  .cerita{color:#334155}
+  .cerita b{color:var(--biru-gelap)}
+
+  /* ============ TABEL NILAI TEMPAT ============ */
+  .tabel-wrap{overflow-x:auto;margin:18px 0;border-radius:14px;border:1px solid var(--garis)}
+  table.nvt{width:100%;border-collapse:collapse;background:#fff;min-width:520px}
+  table.nvt th{padding:13px 10px;color:#fff;font-size:14.5px;letter-spacing:.3px}
+  table.nvt td{padding:11px 10px;text-align:center;font-size:24px;font-weight:800;
+      border-top:1px solid var(--garis)}
+  table.nvt td.bil{font-size:17px;color:#334155;background:#f8fafc;font-weight:700;white-space:nowrap}
+  .th-bil{background:#334155;width:110px}
+  .th-ribuan{background:var(--biru)}
+  .th-ratusan{background:var(--merah)}
+  .th-puluhan{background:var(--hijau)}
+  .th-satuan{background:var(--oranye)}
+  .c-ribuan{color:var(--biru)} .c-ratusan{color:var(--merah)}
+  .c-puluhan{color:var(--hijau)} .c-satuan{color:var(--oranye)}
+  tr.baris-hi td{background:#fffbeb}
+  .mini-cap{font-size:13.5px;color:var(--abu);margin-top:8px}
+
+  /* ============ KARTU POSISI ANGKA 5 ============ */
+  .grid-posisi{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}
+  .p-kartu{border-radius:16px;padding:18px;text-align:center}
+  .p-kartu .angka-besar{font-size:30px;font-weight:800}
+  .p-kartu .bacaan{font-size:13px;color:#475569;margin:2px 0 10px;line-height:1.45}
+  .p-kartu .nilai{display:inline-block;padding:5px 13px;border-radius:99px;font-weight:800;font-size:14px;background:#fff}
+  .pk1{background:var(--oranye-muda)} .pk1 .angka-besar{color:var(--oranye)}
+  .pk2{background:var(--hijau-muda)} .pk2 .angka-besar{color:var(--hijau)}
+  .pk3{background:var(--merah-muda)} .pk3 .angka-besar{color:var(--merah)}
+  .pk4{background:var(--biru-muda)} .pk4 .angka-besar{color:var(--biru)}
+
+  /* ============ TABEL NILAI ANGKA ============ */
+  table.na{width:100%;border-collapse:collapse;background:#fff;min-width:480px}
+  table.na th{background:#334155;color:#fff;padding:12px;font-size:14.5px}
+  table.na td{padding:12px;text-align:center;font-size:17px;font-weight:700;border-top:1px solid var(--garis)}
+  table.na td.tempat{text-transform:capitalize}
+
+  /* ============ RUMUS / BENTUK PANJANG ============ */
+  .rumus{background:#0f172a;border-radius:16px;padding:22px 24px;text-align:center;
+      font-size:24px;font-weight:800;letter-spacing:.5px;flex-wrap:wrap;display:flex;
+      justify-content:center;align-items:center;gap:10px;margin:18px 0}
+  .rumus .r-op{color:#94a3b8;font-weight:600}
+  .rumus .r-bil{color:#fbbf24}
+  .rumus .nol{opacity:.45}
+  .panjang-kecil{font-size:19px}
+  .r-ribuan{color:#93c5fd}.r-ratusan{color:#fda4af}.r-puluhan{color:#6ee7b7}.r-satuan{color:#fcd34d}
+
+  .langkah{counter-reset:lk;margin:16px 0;list-style:none}
+  .langkah li{counter-increment:lk;display:flex;gap:14px;align-items:flex-start;padding:10px 0;
+      border-bottom:1px dashed var(--garis)}
+  .langkah li:last-child{border-bottom:none}
+  .langkah li::before{content:counter(lk);width:30px;height:30px;border-radius:50%;flex-shrink:0;
+      background:var(--hijau-muda);color:#065f46;display:grid;place-items:center;font-weight:800;font-size:14px}
+
+  /* ============ ALAT PERAGA BLOK ============ */
+  .blok-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px}
+  .blok-col{background:#f8fafc;border:1px solid var(--garis);border-radius:14px;padding:14px 10px;text-align:center}
+  .blok-judul{font-size:13px;font-weight:800;margin-bottom:10px}
+  .blok-wrap{display:flex;flex-wrap:wrap;gap:7px;align-items:flex-end;justify-content:center;min-height:30px}
+  .blok-cap{font-size:13px;font-weight:700;color:#475569;margin-top:10px}
+  .kosong{font-size:12.5px;color:#94a3b8;font-style:italic;align-self:center}
+  .legenda{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px;font-size:13.5px;color:#475569}
+  .legenda span{display:inline-flex;align-items:center;gap:7px}
+  .lg{width:15px;height:15px;border-radius:4px;display:inline-block;flex-shrink:0}
+  .svgBlok{display:block}
+
+  /* ============ MEMBACA BILANGAN ============ */
+  .aturan{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0}
+  .aturan-kartu{border-radius:14px;padding:16px 18px}
+  .a1{background:var(--biru-muda)} .a2{background:var(--merah-muda)}
+  .a3{background:var(--hijau-muda)} .a4{background:var(--oranye-muda)}
+  .aturan-kartu h4{font-size:15px;margin-bottom:6px}
+  .aturan-kartu p{font-size:14px;color:#334155}
+  .aturan-kartu b{color:#0f172a}
+
+  /* ============ LABORATORIUM ============ */
+  .lab-atas{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+      background:linear-gradient(135deg,#1e3a8a,#3b82f6);border-radius:18px;padding:22px 28px;color:#fff}
+  .lab-angka-besar{font-size:58px;font-weight:800;letter-spacing:2px;line-height:1}
+  .lab-angka-label{font-size:13px;color:#bfdbfe;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+  .lab-tombol{display:flex;gap:10px;flex-wrap:wrap}
+  .btn-lab{background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.5);color:#fff;
+      padding:10px 18px;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;transition:.15s}
+  .btn-lab:hover{background:rgba(255,255,255,.28)}
+  .lab-slider-wrap{margin:20px 0 4px}
+  .lab-slider-wrap label{font-size:13.5px;font-weight:700;color:var(--abu)}
+  input[type=range]{width:100%;accent-color:var(--biru);margin-top:6px;height:26px}
+
+  .steppers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}
+  .stepper{border-radius:16px;padding:14px 10px;text-align:center;background:var(--cbg,#fff);
+      display:flex;flex-direction:column;gap:8px;border:2px solid transparent;transition:.15s}
+  .stepper:hover{border-color:var(--c)}
+  .tp-ribuan{--c:var(--biru);--cbg:var(--biru-muda)}
+  .tp-ratusan{--c:var(--merah);--cbg:var(--merah-muda)}
+  .tp-puluhan{--c:var(--hijau);--cbg:var(--hijau-muda)}
+  .tp-satuan{--c:var(--oranye);--cbg:var(--oranye-muda)}
+  .st-nama{font-size:12.5px;font-weight:800;color:var(--c);text-transform:uppercase;letter-spacing:1px}
+  .st-btn{background:#fff;color:var(--c);border:none;border-radius:9px;padding:8px 4px;
+      font-weight:800;font-size:13.5px;cursor:pointer;transition:.12s;font-family:inherit}
+  .st-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 3px 8px rgba(15,23,42,.15)}
+  .st-btn:disabled{opacity:.35;cursor:not-allowed}
+  .digit{font-size:52px;font-weight:800;color:var(--c);line-height:1.1}
+  .digit.pop{animation:pop .25s}
+  @keyframes pop{0%{transform:scale(1.3)}100%{transform:scale(1)}}
+  .preset-wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px}
+  .preset-wrap span{font-size:13.5px;font-weight:700;color:var(--abu)}
+  .preset{background:#fff;border:1.5px solid var(--garis);border-radius:99px;padding:7px 16px;
+      font-weight:800;font-size:14px;color:var(--biru-gelap);cursor:pointer;transition:.15s;font-family:inherit}
+  .preset:hover{border-color:var(--biru);background:var(--biru-muda)}
+
+  .lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+  .panel{background:#fff;border:1px solid var(--garis);border-radius:16px;padding:20px}
+  .panel h4{font-size:14px;color:var(--abu);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px}
+  table.mini{width:100%;border-collapse:collapse}
+  table.mini th{padding:8px 4px;font-size:12px}
+  table.mini td{padding:10px 4px;text-align:center;font-size:22px;font-weight:800;border-top:1px solid var(--garis)}
+  table.mini tr.row-nilai td{font-size:14.5px;font-weight:700;color:#475569;background:#f8fafc}
+  .baca-kata{font-size:20px;font-weight:700;font-style:italic;color:var(--biru-gelap);text-align:center;padding:10px 0}
+
+  /* ============ KUIS ============ */
+  .kuis-kotak{background:#fff;border-radius:20px;padding:32px;box-shadow:0 8px 30px rgba(15,23,42,.08);
+      margin-top:24px;border-top:5px solid var(--merah)}
+  .kuis-atas{display:flex;justify-content:space-between;align-items:center;font-size:14px;
+      font-weight:700;color:var(--abu);margin-bottom:10px;gap:10px;flex-wrap:wrap}
+  .pbar{height:10px;background:#e2e8f0;border-radius:99px;overflow:hidden;margin-bottom:22px}
+  .pfill{height:100%;background:linear-gradient(90deg,#f59e0b,#e11d48);border-radius:99px;transition:width .35s}
+  .kuis-teks{font-size:19px;font-weight:700;margin-bottom:20px;line-height:1.6}
+  .opsi-wrap{display:grid;gap:10px}
+  .opsi{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:#f8fafc;
+      border:2px solid var(--garis);border-radius:13px;padding:13px 16px;font-size:16px;font-weight:600;
+      cursor:pointer;transition:.13s;color:var(--tinta);font-family:inherit}
+  .opsi:hover:not(:disabled){border-color:var(--biru);background:#eff6ff;transform:translateX(3px)}
+  .opsi:disabled{cursor:default;opacity:.92}
+  .opsi .huruf{width:32px;height:32px;border-radius:9px;background:#e2e8f0;color:#475569;
+      display:grid;place-items:center;font-weight:800;font-size:14px;flex-shrink:0}
+  .opsi.benar{background:#ecfdf5;border-color:#10b981}
+  .opsi.benar .huruf{background:#10b981;color:#fff}
+  .opsi.salah{background:#fef2f2;border-color:#ef4444}
+  .opsi.salah .huruf{background:#ef4444;color:#fff}
+  .fb{margin-top:18px;border-radius:13px;padding:16px 20px;font-size:15px;line-height:1.65}
+  .fb-benar{background:#ecfdf5;border:1.5px solid #10b981}
+  .fb-salah{background:#fef2f2;border:1.5px solid #ef4444}
+  .fb strong{display:block;margin-bottom:4px;font-size:16px}
+  .fb-benar strong{color:#047857} .fb-salah strong{color:#b91c1c}
+  .btn-lanjut{margin-top:16px;background:var(--biru);color:#fff;border:none;border-radius:11px;
+      padding:12px 24px;font-weight:800;font-size:15px;cursor:pointer;transition:.15s;font-family:inherit}
+  .btn-lanjut:hover{background:var(--biru-gelap)}
+  .kuis-intro{text-align:center;padding:14px 0}
+  .kuis-intro h3{font-size:24px;color:var(--biru-gelap);margin-bottom:10px}
+  .kuis-intro p{color:var(--abu);max-width:520px;margin:0 auto 8px}
+  .btn-mulai{background:var(--merah);color:#fff;border:none;border-radius:12px;padding:14px 34px;
+      font-weight:800;font-size:16px;cursor:pointer;margin-top:18px;transition:.15s;font-family:inherit}
+  .btn-mulai:hover{background:#be123c;transform:translateY(-2px)}
+  .hasil{text-align:center;padding:10px 0}
+  .hasil h3{font-size:26px;color:var(--biru-gelap);margin:16px 0 6px}
+  .hasil-pesan{color:#334155;max-width:520px;margin:0 auto}
+  .hasil-list{margin:22px auto 4px;max-width:420px;text-align:left}
+  .hasil-item{display:flex;justify-content:space-between;gap:10px;padding:9px 16px;border-radius:10px;
+      background:#f8fafc;margin-bottom:7px;font-size:14.5px;font-weight:600}
+  .h-ok{color:#047857} .h-no{color:#b91c1c}
+  .btn-ulang{background:var(--hijau);color:#fff;border:none;border-radius:12px;padding:13px 30px;
+      font-weight:800;font-size:15px;cursor:pointer;margin-top:18px;transition:.15s;font-family:inherit}
+  .btn-ulang:hover{background:#047857}
+
+  /* ============ RANGKUMAN ============ */
+  .rangkuman-list{list-style:none;margin-top:6px}
+  .rangkuman-list li{display:flex;gap:13px;align-items:flex-start;padding:11px 0;border-bottom:1px dashed var(--garis)}
+  .rangkuman-list li:last-child{border-bottom:none}
+  .rk-titik{width:10px;height:10px;border-radius:50%;background:var(--biru);flex-shrink:0;margin-top:10px}
+  .rangkuman-list b{color:var(--biru-gelap)}
+
+  /* ============ GURU ============ */
+  details.guru{background:#fff;border-radius:16px;padding:20px 24px;margin-top:22px;
+      border:1px solid var(--garis)}
+  details.guru summary{font-weight:800;color:#334155;cursor:pointer;font-size:16px}
+  details.guru p{margin-top:12px;font-size:14.5px;color:#475569}
+  details.guru ul{margin:10px 0 0 20px;font-size:14.5px;color:#475569}
+  details.guru li{margin-bottom:6px}
+
+  /* ============ FOOTER ============ */
+  footer{margin-top:56px;background:#0f172a;color:#94a3b8;padding:34px 0;text-align:center;font-size:14px}
+  footer b{color:#e2e8f0}
+
+  /* ============ RESPONSIF ============ */
+  @media (max-width:820px){
+    .hero h1{font-size:33px}
+    .lab-grid{grid-template-columns:1fr}
+    .aturan{grid-template-columns:1fr}
+    .grid-tujuan{grid-template-columns:1fr}
+    .grid-posisi{grid-template-columns:repeat(2,1fr)}
+    .blok-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:560px){
+    .steppers{grid-template-columns:repeat(2,1fr)}
+    .digit{font-size:42px}
+    .lab-angka-besar{font-size:42px}
+    .hero-deko{font-size:110px}
+    .blok-grid{grid-template-columns:1fr}
+    .kartu{padding:22px 18px}
+    .judul{font-size:25px}
+  }
+  @media print{
+    nav,.hero-cta,.lab-tombol,.steppers,.lab-slider-wrap,.preset-wrap{display:none}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== NAVIGASI ==================== -->
+<nav>
+  <div class="wadah nav-dalam">
+    <div class="merek">
+      <div class="merek-logo">M4</div>
+      <span>Matematika Kelas 4</span>
+    </div>
+    <div class="nav-link">
+      <a href="#tujuan">Tujuan</a>
+      <a href="#pengantar">Pengantar</a>
+      <a href="#tabel">Tabel</a>
+      <a href="#nilaiangka">Nilai Angka</a>
+      <a href="#bentuk">Bentuk Panjang</a>
+      <a href="#membaca">Membaca</a>
+      <a href="#lab">Praktik</a>
+      <a href="#kuis">Kuis</a>
+      <a href="#rangkuman">Rangkuman</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <div class="hero-deko" aria-hidden="true">9 9 9 9</div>
+  <div class="wadah hero-dalam">
+    <span class="lencana">Matematika &bull; Kelas 4 SD/MI &bull; Bilangan Cacah</span>
+    <h1>Mengenal Nilai Tempat<br>sampai Ribuan</h1>
+    <p>Pernahkah kamu bertanya, mengapa angka 9 bisa berarti sembilan, sembilan puluh, sembilan ratus,
+       bahkan sembilan ribu? Di sini kamu akan menemukan jawabannya. Ayo belajar membaca, memecah,
+       dan menulis bilangan sampai 9.999!</p>
+    <div class="hero-cta">
+      <a class="btn" href="#pengantar">Mulai Belajar</a>
+      <a class="btn btn-tembus" href="#kuis">Langsung ke Kuis</a>
+    </div>
+    <div class="hero-chip">
+      <span class="chip-terang">4 nilai tempat</span>
+      <span class="chip-terang">Bilangan 0 sampai 9.999</span>
+      <span class="chip-terang">Alat peraga balok</span>
+      <span class="chip-terang">Kuis 10 soal</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ==================== TUJUAN ==================== -->
+<section id="tujuan">
+  <div class="wadah">
+    <div class="kepala-bagian">
+      <span class="tanda t-biru">Tujuan Pembelajaran</span>
+      <h2 class="judul">Apa yang Akan Kamu Pelajari?</h2>
+      <p class="subjudul">Setelah mempelajari materi ini dengan teliti, kamu diharapkan mampu:</p>
+    </div>
+    <div class="grid-tujuan">
+      <div class="t-kartu">
+        <div class="t-angka">1</div>
+        <div>
+          <h4>Menyebutkan nilai tempat</h4>
+          <p>Mengenal empat kedudukan angka dalam bilangan: satuan, puluhan, ratusan, dan ribuan.</p>
+        </div>
+      </div>
+      <div class="t-kartu">
+        <div class="t-angka">2</div>
+        <div>
+          <h4>Menentukan nilai angka</h4>
+          <p>Mengetahui berapa nilai setiap angka berdasarkan kedudukannya dalam sebuah bilangan.</p>
+        </div>
+      </div>
+      <div class="t-kartu">
+        <div class="t-angka">3</div>
+        <div>
+          <h4>Menuliskan bentuk panjang</h4>
+          <p>Memecah bilangan menjadi penjumlahan ribuan, ratusan, puluhan, dan satuan.</p>
+        </div>
+      </div>
+      <div class="t-kartu">
+        <div class="t-angka">4</div>
+        <div>
+          <h4>Membaca dan menulis bilangan</h4>
+          <p>Mengubah lambang bilangan menjadi kata-kata, dan sebaliknya, sampai 9.999.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PENGANTAR ==================== -->
+<section id="pengantar">
+  <div class="wadah">
+    <div class="kepala-bagian">
+      <span class="tanda t-kuning">Pengantar</span>
+      <h2 class="judul">Rahasia di Balik Angka 7.777</h2>
+      <p class="subjudul">Sebelum mengenal nilai tempat, mari kita simak cerita berikut.</p>
+    </div>
+    <div class="kartu cerita">
+      <div class="cerita-judul">
+        <div class="cerita-ikon">BACA</div>
+        <h3 style="margin:0">Kartu Angka Bu Rina</h3>
+      </div>
+      <p>Bu Rina memberikan empat buah kartu kepada empat siswa: Ali, Bima, Cika, dan Dinda.
+         Setiap kartu bertuliskan angka <b>7</b>. Ketika keempat kartu disusun berjajar,
+         terbentuklah bilangan <b>7.777</b>.</p>
+      <p>Menariknya, meskipun keempat angkanya sama, ternyata <b>setiap angka 7 memiliki nilai yang berbeda!</b>
+         Perhatikan tabel berikut.</p>
+      <div class="tabel-wrap">
+        <table class="nvt">
+          <thead>
+            <tr><th class="th-bil">Bilangan</th><th class="th-ribuan">Ribuan</th><th class="th-ratusan">Ratusan</th><th class="th-puluhan">Puluhan</th><th class="th-satuan">Satuan</th></tr>
+          </thead>
+          <tbody>
+            <tr class="baris-hi">
+              <td class="bil">7.777</td>
+              <td class="c-ribuan">7</td><td class="c-ratusan">7</td><td class="c-puluhan">7</td><td class="c-satuan">7</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Angka 7 yang pertama (paling kiri) bernilai <b>7.000</b>, angka 7 yang kedua bernilai <b>700</b>,
+         angka 7 yang ketiga bernilai <b>70</b>, dan angka 7 yang terakhir hanya bernilai <b>7</b>.
+         Jadi: <b>7.777 = 7.000 + 700 + 70 + 7</b>.</p>
+      <p>Mengapa bisa berbeda padahal angkanya sama? Rahasianya adalah <b>kedudukan atau posisi</b> setiap angka
+         di dalam bilangan. Kedudukan inilah yang disebut <b>nilai tempat</b>.</p>
+      <div class="penting">
+        <strong>Ingat definisi ini baik-baik:</strong><br>
+        Nilai tempat adalah kedudukan suatu angka dalam sebuah bilangan.
+        Semakin ke kiri posisi angka, semakin besar nilainya.
+        Urutan dari kanan: satuan, puluhan, ratusan, lalu ribuan.
+      </div>
+    </div>
+
+    <div class="kartu">
+      <h3>Posisi Menentukan Nilai</h3>
+      <p>Perhatikan angka <b>5</b> pada keempat bilangan di bawah ini. Angkanya sama, tetapi tempatnya berbeda,
+         sehingga nilainya pun berbeda.</p>
+      <div class="grid-posisi">
+        <div class="p-kartu pk1">
+          <div class="angka-besar">5</div>
+          <div class="bacaan">dibaca "lima"</div>
+          <span class="nilai">angka 5 bernilai 5</span>
+        </div>
+        <div class="p-kartu pk2">
+          <div class="angka-besar">58</div>
+          <div class="bacaan">dibaca "lima puluh delapan"</div>
+          <span class="nilai">angka 5 bernilai 50</span>
+        </div>
+        <div class="p-kartu pk3">
+          <div class="angka-besar">561</div>
+          <div class="bacaan">dibaca "lima ratus enam puluh satu"</div>
+          <span class="nilai">angka 5 bernilai 500</span>
+        </div>
+        <div class="p-kartu pk4">
+          <div class="angka-besar">5.294</div>
+          <div class="bacaan">dibaca "lima ribu dua ratus sembilan puluh empat"</div>
+          <span class="nilai">angka 5 bernilai 5.000</span>
+        </div>
+      </div>
+      <div class="catatan"><strong>Kesimpulan:</strong> angka yang sama dapat bernilai berbeda karena tempatnya berbeda.
+      Inilah mengapa nilai tempat sangat penting untuk dipahami.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TABEL NILAI TEMPAT ==================== -->
+<section id="tabel">
+  <div class="wadah">
+    <div class="kepala-bagian">
+      <span class="tanda t-ungu">Materi Inti</span>
+      <h2 class="judul">Tabel Nilai Tempat</h2>
+      <p class="subjudul">Tabel nilai tempat adalah "rumah" untuk setiap angka. Setiap angka menempati satu kamar
+         (kolom) sesuai kedudukannya.</p>
+    </div>
+    <div class="kartu">
+      <p>Perhatikan tabel di bawah ini. Bilangan ditulis dari kiri ke kanan, mulai dari ribuan hingga satuan.
+         Tempat yang tidak diisi angka bernilai <b>0</b>.</p>
+      <div class="tabel-wrap">
+        <table class="nvt">
+          <thead>
+            <tr><th class="th-bil">Bilangan</th><th class="th-ribuan">Ribuan</th><th class="th-ratusan">Ratusan</th><th class="th-puluhan">Puluhan</th><th class="th-satuan">Satuan</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="bil">9</td><td class="c-ribuan">0</td><td class="c-ratusan">0</td><td class="c-puluhan">0</td><td class="c-satuan">9</td></tr>
+            <tr><td class="bil">75</td><td class="c-ribuan">0</td><td class="c-ratusan">0</td><td class="c-puluhan">7</td><td class="c-satuan">5</td></tr>
+            <tr><td class="bil">640</td><td class="c-ribuan">0</td><td class="c-ratusan">6</td><td class="c-puluhan">4</td><td class="c-satuan">0</td></tr>
+            <tr><td class="bil">1.842</td><td class="c-ribuan">1</td><td class="c-ratusan">8</td><td class="c-puluhan">4</td><td class="c-satuan">2</td></tr>
+            <tr class="baris-hi"><td class="bil">9.999</td><td class="c-ribuan">9</td><td class="c-ratusan">9</td><td class="c-puluhan">9</td><td class="c-satuan">9</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mini-cap">Pada bilangan 640, tempat ribuan dan ratusan kosong, artinya bernilai 0.
+         Bilangan itu terdiri dari 6 ratusan, 4 puluhan, dan 0 satuan.</p>
+      <div class="penting">
+        <strong>Tahukah kamu?</strong> Bilangan terbesar yang kita pelajari pada materi ini adalah
+        <strong>9.999</strong>. Semua tempatnya diisi angka 9, yaitu 9 ribuan + 9 ratusan + 9 puluhan + 9 satuan.
+        Adapun bilangan terkecil yang memiliki angka ribuan adalah 1.000.
+      </div>
+      <div class="tips">
+        <strong>Cara cepat menghafal urutan:</strong> hitung dari kanan ke kiri &mdash;
+        <b>sa</b>tuan, <b>pu</b>luhan, <b>ra</b>tusan, <b>ri</b>buan (sa-pu-ra-ri).
+        Semakin ke kiri, nilainya sepuluh kali lebih besar dari tempat di sebelah kanannya:
+        1 puluhan = 10 satuan, 1 ratusan = 10 puluhan, 1 ribuan = 10 ratusan.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== NILAI TEMPAT & NILAI ANGKA ==================== -->
+<section id="nilaiangka">
+  <div class="wadah">
+    <div class="kepala-bagian">
+      <span class="tanda t-rose">Materi Inti</span>
+      <h2 class="judul">Nilai Tempat dan Nilai Angka</h2>
+      <p class="subjudul">Dua istilah ini sering tertukar. Mari kita bedakan dengan contoh bilangan 5.482.</p>
+    </div>
+    <div class="kartu">
+      <p><b>Nilai tempat</b> adalah <b>nama kedudukan</b> sebuah angka: satuan, puluhan, ratusan, atau ribuan.
+         Sedangkan <b>nilai angka</b> adalah <b>hasil kali angka dengan nilai tempatnya</b>.</p>
+      <div class="tabel-wrap">
+        <table class="na">
+          <thead>
+            <tr><th>Angka</th><th>Nilai Tempat</th><th>Nilai Angka</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="c-ribuan">5</td><td class="tempat">ribuan</td><td>5.000</td></tr>
+            <tr><td class="c-ratusan">4</td><td class="tempat">ratusan</td><td>400</td></tr>
+            <tr><td class="c-puluhan">8</td><td class="tempat">puluhan</td><td>80</td></tr>
+            <tr><td class="c-satuan">2</td><td class="tempat">satuan</td><td>2</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Jadi, pada bilangan 5.482: angka 5 <b>menempati tempat ribuan</b> dan <b>bernilai 5.000</b>;
+         angka 4 menempati tempat ratusan dan bernilai 400; angka 8 menempati tempat puluhan dan bernilai 80;
+         angka 2 menempati tempat satuan dan bernilai 2.</p>
+      <div class="tips">
+        <strong>Trik cepat menentukan nilai angka:</strong> lihat angkanya, lalu hitung berapa banyak tempat
+        di sebelah kanannya. Tambahkan angka nol sebanyak itu.<br>
+        Contoh: angka 8 pada 5.482 memiliki satu tempat di sebelah kanannya (satuan), jadi nilainya 80.
+        Angka 5 memiliki tiga tempat di sebelah kanannya, jadi nilainya 5.000.
+      </div>
+      <div class="penting">
+        <strong>Awas tertukar!</strong> "Angka 4 pada 5.482" ditulis 4, tetapi "nilai angka 4 pada 5.482" adalah 400.
+        Angka adalah lambangnya, sedangkan nilai angka bergantung pada tempatnya.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BENTUK PANJANG ==================== -->
+<section id="bentuk">
+  <div class="wadah">
+    <div class="kepala-bagian">
+      <span class="tanda t-hijau">Materi Inti</span>
+      <h2 class="judul">Bentuk Panjang Bilangan</h2>
+      <p class="subjudul">Bentuk panjang (dekomposisi) adalah cara menuliskan bilangan sebagai penjumlahan
+         nilai angka setiap tempatnya.</p>
+    </div>
+    <div class="kartu">
+      <h3>Contoh: 5.482</h3>
+      <div class="rumus">
+        <span class="r-bil">5.482</span><span class="r-op">=</span>
+        <span class="r-ribuan">5.000</span><span class="r-op">+</span>
+        <span class="r-ratusan">400</span><span class="r-op">+</span>
+        <span class="r-puluhan">80</span><span class="r-op">+</span>
+        <span class="r-satuan">2</span>
+      </div>
+      <p>Langkah-langkah menuliskan bentuk panjang:</p>
+      <ol class="langkah">
+        <li><span>Tulis bilangannya, lalu tentukan angka pada setiap tempat:
+              5 ribuan, 4 ratusan, 8 puluhan, 2 satuan.</span></li>
+        <li><span>Carilah nilai setiap angka: 5.000, 400, 80, dan 2.</span></li>
+        <li><span>Jumlahkan semuanya: 5.000 + 400 + 80 + 2 = 5.482.</span></li>
+      </ol>
+      <div class="catatan"><strong>Perhatikan:</strong> jika ada tempat yang kosong, nilainya tetap ditulis 0.
+      Contoh: 2.045 = 2.000 + 0 + 40 + 5, atau boleh juga ditulis singkat 2.000 + 40 + 5.</div>
+    </div>
+
+    <div class="kartu">
+      <h3>Alat Peraga Balok: Melihat Bilangan dengan Mata</h3>
+      <p>Bilangan juga dapat divisualisasikan menggunakan balok. Setiap warna mewakili nilai tempat yang berbeda.
+         Berikut tampilan bilangan <b>1.342</b>:</p>
+      <div class="blok-grid" id="blokStatis"></div>
+      <div class="rumus panjang-kecil">
+        <span class="r-bil">1.342</span><span class="r-op">=</span>
+        <span class="r-ribuan">1.000</span><span class="r-op">+</span>
+        <span class="r-ratusan">300</span><span class="r-op">+</span>
+        <span class="r-puluhan">40</span><span class="r-op">+</span>
+        <span class="r-satuan">2</span>
+      </div>
+      <div class="legenda">
+        <span><span class="lg" style="background:#3b82f6"></span> 1 kubus besar = 1.000 (ribuan)</span>
+        <span><span class="lg" style="background:#fb7185"></span> 1 lempengan = 100 (ratusan)</span>
+        <span><span class="lg" style="background:#10b981"></span> 1 batang = 10 (puluhan)</span>
+        <span><span class="lg" style="background:#fb923c"></span> 1 kotak kecil = 1 (satuan)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MEMBACA BILANGAN ==================== -->
+<section id="membaca">
+  <div class="wadah">
+    <div class="kepala-bagian">
+      <span class="tanda t-sian">Materi Inti</span>
+      <h2 class="judul">Membaca dan Menulis Bilangan</h2>
+      <p class="subjudul">Membaca bilangan dilakukan sesuai nilai tempatnya, dimulai dari ribuan.</p>
+    </div>
+    <div class="kartu">
+      <h3>Aturan Membaca</h3>
+      <div class="aturan">
+        <div class="aturan-kartu a1">
+          <h4>Ribuan</h4>
+          <p>1.000 dibaca <b>"seribu"</b><br>2.000 dibaca <b>"dua ribu"</b><br>9.000 dibaca <b>"sembilan ribu"</b></p>
+        </div>
+        <div class="aturan-kartu a2">
+          <h4>Ratusan</h4>
+          <p>100 dibaca <b>"seratus"</b><br>500 dibaca <b>"lima ratus"</b><br>900 dibaca <b>"sembilan ratus"</b></p>
+        </div>
+        <div class="aturan-kartu a3">
+          <h4>Puluhan</h4>
+          <p>10 dibaca <b>"sepuluh"</b><br>11 dibaca <b>"sebelas"</b><br>15 dibaca <b>"lima belas"</b><br>20 dibaca <b>"dua puluh"</b></p>
+        </div>
+        <div class="aturan-kartu a4">
+          <h4>Tempat yang Kosong</h4>
+          <p>Angka 0 tidak perlu dibaca.<br>2.045 dibaca <b>"dua ribu empat puluh lima"</b><br>6.006 dibaca <b>"enam ribu enam"</b></p>
+        </div>
+      </div>
+
+      <h3>Daftar Lambang dan Nama Bilangan</h3>
+      <div class="tabel-wrap">
+        <table class="na">
+          <thead>
+            <tr><th>Lambang Bilangan</th><th>Nama Bilangan (Cara Membaca)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1.000</td><td>seribu</td></tr>
+            <tr><td>3.200</td><td>tiga ribu dua ratus</td></tr>
+            <tr><td>4.070</td><td>empat ribu tujuh puluh</td></tr>
+            <tr><td>6.006</td><td>enam ribu enam</td></tr>
+            <tr><td>8.123</td><td>delapan ribu seratus dua puluh tiga</td></tr>
+            <tr><td>9.999</td><td>sembilan ribu sembilan ratus sembilan puluh sembilan</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:22px">Menulis Bilangan dari Kata ke Angka</h3>
+      <p>Bagaimana menulis <b>"enam ribu tiga ratus lima belas"</b> dengan angka? Ubah setiap kata menjadi
+         nilainya, lalu jumlahkan:</p>
+      <div class="rumus panjang-kecil">
+        <span class="r-ribuan">6.000</span><span class="r-op">+</span>
+        <span class="r-ratusan">300</span><span class="r-op">+</span>
+        <span class="r-puluhan">15</span><span class="r-op">=</span>
+        <span class="r-bil">6.315</span>
+      </div>
+      <div class="tips">
+        <strong>Tentang tanda titik:</strong> pada penulisan angka di Indonesia, tanda titik pada 9.999
+        hanyalah <strong>pemisah ribuan</strong> agar mudah dibaca, bukan tanda lain.
+        Jadi 9.999 dibaca "sembilan ribu sembilan ratus sembilan puluh sembilan".
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LABORATORIUM ==================== -->
+<section id="lab">
+  <div class="wadah">
+    <div class="kepala-bagian">
+      <span class="tanda t-biru">Ayo Praktik</span>
+      <h2 class="judul">Laboratorium Nilai Tempat</h2>
+      <p class="subjudul">Sekarang giliranmu bereksperimen! Tekan tombol tambah dan kurang pada setiap nilai tempat,
+         lalu amati bagaimana tabel, bentuk panjang, cara membaca, dan balok ikut berubah.</p>
+    </div>
+    <div class="kartu">
+      <div class="lab-atas">
+        <div>
+          <div class="lab-angka-label">Bilanganmu saat ini</div>
+          <div class="lab-angka-besar" id="labAngka">2.475</div>
+        </div>
+        <div class="lab-tombol">
+          <button class="btn-lab" id="btnAcak" type="button">Acak Angka</button>
+          <button class="btn-lab" id="btnNol" type="button">Kosongkan (0)</button>
+        </div>
+      </div>
+
+      <div class="lab-slider-wrap">
+        <label for="labSlider">Atau geser penggeser untuk memilih bilangan 0 sampai 9.999</label>
+        <input type="range" id="labSlider" min="0" max="9999" step="1" value="2475"
+               aria-label="Pilih bilangan dari 0 sampai 9.999">
+      </div>
+
+      <div class="steppers">
+        <div class="stepper tp-ribuan">
+          <span class="st-nama">Ribuan</span>
+          <button class="st-btn" id="plus0" type="button" aria-label="Tambah satu ribu">+ 1.000</button>
+          <span class="digit" id="dg0">2</span>
+          <button class="st-btn" id="minus0" type="button" aria-label="Kurangi satu ribu">&minus; 1.000</button>
+        </div>
+        <div class="stepper tp-ratusan">
+          <span class="st-nama">Ratusan</span>
+          <button class="st-btn" id="plus1" type="button" aria-label="Tambah satu ratus">+ 100</button>
+          <span class="digit" id="dg1">4</span>
+          <button class="st-btn" id="minus1" type="button" aria-label="Kurangi satu ratus">&minus; 100</button>
+        </div>
+        <div class="stepper tp-puluhan">
+          <span class="st-nama">Puluhan</span>
+          <button class="st-btn" id="plus2" type="button" aria-label="Tambah satu puluh">+ 10</button>
+          <span class="digit" id="dg2">7</span>
+          <button class="st-btn" id="minus2" type="button" aria-label="Kurangi satu puluh">&minus; 10</button>
+        </div>
+        <div class="stepper tp-satuan">
+          <span class="st-nama">Satuan</span>
+          <button class="st-btn" id="plus3" type="button" aria-label="Tambah satu">+ 1</button>
+          <span class="digit" id="dg3">5</span>
+          <button class="st-btn" id="minus3" type="button" aria-label="Kurangi satu">&minus; 1</button>
+        </div>
+      </div>
+
+      <div class="preset-wrap">
+        <span>Coba bilangan ini:</span>
+        <button class="preset" type="button" data-n="7777">7.777</button>
+        <button class="preset" type="button" data-n="2045">2.045</button>
+        <button class="preset" type="button" data-n="6006">6.006</button>
+        <button class="preset" type="button" data-n="9999">9.999</button>
+      </div>
+
+      <div class="lab-grid">
+        <div class="panel">
+          <h4>Tabel Nilai Tempat</h4>
+          <table class="mini">
+            <thead>
+              <tr>
+                <th class="th-ribuan">Rb</th><th class="th-ratusan">Rts</th>
+                <th class="th-puluhan">Plh</th><th class="th-satuan">Stn</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="c-ribuan" id="tc0">2</td><td class="c-ratusan" id="tc1">4</td>
+                <td class="c-puluhan" id="tc2">7</td><td class="c-satuan" id="tc3">5</td>
+              </tr>
+              <tr class="row-nilai">
+                <td id="tv0">2.000</td><td id="tv1">400</td><td id="tv2">70</td><td id="tv3">5</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="mini-cap">Baris atas: angka pada tiap tempat.<br>Baris bawah: nilai angkanya.</p>
+        </div>
+        <div class="panel">
+          <h4>Bentuk Panjang</h4>
+          <div class="rumus panjang-kecil" id="labPanjang" style="margin:0"></div>
+        </div>
+        <div class="panel">
+          <h4>Cara Membaca</h4>
+          <p class="baca-kata" id="labBaca"></p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:26px">Tampilan Balok</h3>
+      <div class="blok-grid">
+        <div class="blok-col">
+          <div class="blok-judul c-ribuan" style="text-transform:uppercase">Ribuan</div>
+          <div class="blok-wrap" id="b0"></div>
+          <p class="blok-cap" id="bc0"></p>
+        </div>
+        <div class="blok-col">
+          <div class="blok-judul c-ratusan" style="text-transform:uppercase">Ratusan</div>
+          <div class="blok-wrap" id="b1"></div>
+          <p class="blok-cap" id="bc1"></p>
+        </div>
+        <div class="blok-col">
+          <div class="blok-judul c-puluhan" style="text-transform:uppercase">Puluhan</div>
+          <div class="blok-wrap" id="b2"></div>
+          <p class="blok-cap" id="bc2"></p>
+        </div>
+        <div class="blok-col">
+          <div class="blok-judul c-satuan" style="text-transform:uppercase">Satuan</div>
+          <div class="blok-wrap" id="b3"></div>
+          <p class="blok-cap" id="bc3"></p>
+        </div>
+      </div>
+
+      <div class="tips" style="margin-top:22px">
+        <strong>Amati ini:</strong> atur bilangan menjadi sembarang angka dengan satuan 9, misalnya 259,
+        lalu tekan tombol <b>+ 1</b> pada tempat satuan. Satuan kembali menjadi 0 dan puluhan bertambah satu!
+        Mengapa? Karena <b>10 satuan sama dengan 1 puluhan</b>. Kejadian ini disebut <b>menyimpan</b>
+        dan akan selalu kamu jumpai saat berhitung penjumlahan.
+      </div>
+      <div class="penting">
+        <strong>Tantangan:</strong> atur bilangan hingga menjadi <strong>9.999</strong> (bilangan terbesar!),
+        lalu tuliskan bentuk panjangnya di buku tulismu. Setelah selesai, buka jawaban di bawah ini.
+        <details style="margin-top:10px">
+          <summary style="cursor:pointer;font-weight:700">Lihat jawaban</summary>
+          <p style="margin-top:8px">9.999 = 9.000 + 900 + 90 + 9, yang dibaca
+          "sembilan ribu sembilan ratus sembilan puluh sembilan".</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== KUIS ==================== -->
+<section id="kuis">
+  <div class="wadah">
+    <div class="kepala-bagian">
+      <span class="tanda t-merah">Evaluasi</span>
+      <h2 class="judul">Uji Pemahamanmu</h2>
+      <p class="subjudul">Sepuluh soal pilihan ganda menantimu. Setiap jawaban langsung disertai pembahasan.
+         Kerjakan dengan tenang dan teliti.</p>
+    </div>
+    <div class="kuis-kotak" id="kuisBox"></div>
+  </div>
+</section>
+
+<!-- ==================== RANGKUMAN ==================== -->
+<section id="rangkuman">
+  <div class="wadah">
+    <div class="kepala-bagian">
+      <span class="tanda t-abu">Penutup</span>
+      <h2 class="judul">Rangkuman</h2>
+    </div>
+    <div class="kartu">
+      <ul class="rangkuman-list">
+        <li><span class="rk-titik"></span><span><b>Nilai tempat</b> adalah kedudukan angka dalam bilangan.
+            Dari kanan ke kiri: satuan, puluhan, ratusan, ribuan.</span></li>
+        <li><span class="rk-titik"></span><span>Setiap angka memiliki <b>nilai tempat</b> (nama kedudukannya) dan
+            <b>nilai angka</b> (hasil kali angka dengan tempatnya). Contoh: pada 3.456, angka 4 menempati tempat
+            ratusan dan bernilai 400.</span></li>
+        <li><span class="rk-titik"></span><span><b>Bentuk panjang</b> memecah bilangan menjadi penjumlahan nilai angkanya:
+            3.456 = 3.000 + 400 + 50 + 6.</span></li>
+        <li><span class="rk-titik"></span><span>Tempat yang kosong bernilai <b>0</b> dan tidak dibaca:
+            2.045 dibaca "dua ribu empat puluh lima".</span></li>
+        <li><span class="rk-titik"></span><span>Bilangan terbesar pada materi ini adalah <b>9.999</b>, dan setiap
+            tempat ke kiri bernilai sepuluh kali tempat di sebelah kanannya.</span></li>
+      </ul>
+      <div class="catatan" style="margin-bottom:0">
+        <strong>Pesan Bapak/Ibu Guru:</strong> nilai tempat adalah kunci untuk memahami bilangan besar.
+        Setelah kamu menguasainya, kamu siap mempelajari membandingkan dan mengurutkan bilangan,
+        serta berhitung sampai ribuan. Selamat belajar!
+      </div>
+    </div>
+
+    <details class="guru">
+      <summary>Catatan untuk Guru (klik untuk membuka)</summary>
+      <p><b>Saran penggunaan materi:</b></p>
+      <ul>
+        <li><b>Pertemuan 1:</b> bagian Pengantar, Tabel Nilai Tempat, dan Nilai Angka (penguatan konsep dasar).</li>
+        <li><b>Pertemuan 2:</b> bagian Bentuk Panjang, Membaca dan Menulis Bilangan, dilanjutkan eksplorasi Laboratorium secara berpasangan atau kelompok.</li>
+        <li><b>Pertemuan 3 / penilaian:</b> pengerjaan Kuis secara mandiri, lalu diskusi pembahasan.</li>
+        <li>Soal kuis dibuat ulang (diacak) setiap kali tombol mulai ditekan, sehingga dapat digunakan untuk latihan berulang.</li>
+      </ul>
+      <p><b>Alat peraga nyata yang dapat menggantikan balok digital:</b> kubus satuan dari kertas atau karton,
+         ikatan sedotan sepuluh batang untuk puluhan, lempengan kotak-kotak seratus untuk ratusan,
+         atau uang mainan pecahan 1, 10, 100, dan 1.000.</p>
+      <p><b>Miskonsepsi yang perlu diantisipasi:</b> siswa sering menyamakan "nilai angka" dengan "angka" itu sendiri
+          (misalnya menjawab 4 padahal nilai angkanya 400), serta keliru menyebut nama tempat karena menghitung
+          dari kiri ke kanan. Tekankan kebiasaan menghitung tempat dari kanan.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wadah">
+    <p><b>Matematika Kelas 4 SD/MI</b> &mdash; Mengenal Nilai Tempat sampai Ribuan (bilangan maksimal 9.999)</p>
+    <p style="margin-top:6px">Materi pembelajaran ini dapat digunakan secara bebas untuk kegiatan belajar mengajar.</p>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   FUNGSI MURNI (dapat diuji tanpa halaman)
+   ========================================================= */
+function fmt(n){ return n.toLocaleString('id-ID'); }
+function kapital(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+function acak(arr){
+  for(var i = arr.length - 1; i > 0; i--){
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+  }
+  return arr;
+}
+function acakInt(a, b){ return Math.floor(Math.random() * (b - a + 1)) + a; }
+
+function terbilang(n){
+  if(n === 0) return 'nol';
+  var S = ['', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan'];
+  var bagian = [];
+  var rb = Math.floor(n / 1000);
+  var rt = Math.floor((n % 1000) / 100);
+  var pl = Math.floor((n % 100) / 10);
+  var st = n % 10;
+  if(rb === 1) bagian.push('seribu');
+  else if(rb > 1) bagian.push(S[rb] + ' ribu');
+  if(rt === 1) bagian.push('seratus');
+  else if(rt > 1) bagian.push(S[rt] + ' ratus');
+  if(pl === 1){
+    if(st === 0) bagian.push('sepuluh');
+    else if(st === 1) bagian.push('sebelas');
+    else bagian.push(S[st] + ' belas');
+  } else if(pl > 1){
+    bagian.push(S[pl] + ' puluh');
+    if(st > 0) bagian.push(S[st]);
+  } else if(st > 0){
+    bagian.push(S[st]);
+  }
+  return bagian.join(' ');
+}
+
+function angkaKeDigit(n){
+  return [Math.floor(n / 1000) % 10, Math.floor(n / 100) % 10, Math.floor(n / 10) % 10, n % 10];
+}
+
+var NAMA_TEMPAT = ['ribuan', 'ratusan', 'puluhan', 'satuan'];
+var MULTI = [1000, 100, 10, 1];
+
+/* ---------- Pembuat SVG balok Dienes ---------- */
+function svgSatuan(){
+  return '<svg class="svgBlok" width="16" height="16" viewBox="0 0 16 16" role="img" aria-label="satu satuan">' +
+    '<rect x="1.5" y="1.5" width="13" height="13" rx="2.5" fill="#fb923c" stroke="#9a3412" stroke-width="1.5"/></svg>';
+}
+function svgBatang(){
+  var g = '';
+  for(var i = 1; i < 10; i++) g += '<line x1="1" y1="' + (i*16) + '" x2="15" y2="' + (i*16) + '"/>';
+  return '<svg class="svgBlok" width="16" height="160" viewBox="0 0 16 160" role="img" aria-label="satu puluhan">' +
+    '<rect x="1" y="1" width="14" height="158" rx="2" fill="#10b981" stroke="#065f46" stroke-width="1.5"/>' +
+    '<g stroke="rgba(255,255,255,.55)" stroke-width="1">' + g + '</g></svg>';
+}
+function svgLempeng(){
+  var g = '';
+  for(var i = 1; i < 10; i++){
+    g += '<line x1="1" y1="' + (i*16) + '" x2="159" y2="' + (i*16) + '"/>';
+    g += '<line x1="' + (i*16) + '" y1="1" x2="' + (i*16) + '" y2="159"/>';
+  }
+  return '<svg class="svgBlok" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="satu ratusan">' +
+    '<rect x="1" y="1" width="158" height="158" rx="2" fill="#fb7185" stroke="#9f1239" stroke-width="1.5"/>' +
+    '<g stroke="rgba(255,255,255,.55)" stroke-width="1">' + g + '</g></svg>';
+}
+function svgKubus(){
+  var g = '';
+  var t, s;
+  for(t of [0.2, 0.4, 0.6, 0.8]){
+    var x1 = 12 + 63 * t;
+    g += '<line x1="' + x1 + '" y1="' + (44 + 32*t) + '" x2="' + x1 + '" y2="' + (150 + 32*t) + '"/>';
+    var x2 = 75 + 63 * t;
+    g += '<line x1="' + x2 + '" y1="' + (76 - 32*t) + '" x2="' + x2 + '" y2="' + (182 - 32*t) + '"/>';
+  }
+  for(s of [0.25, 0.5, 0.75]){
+    g += '<line x1="12" y1="' + (44 + 106*s) + '" x2="75" y2="' + (76 + 106*s) + '"/>';
+    g += '<line x1="75" y1="' + (76 + 106*s) + '" x2="138" y2="' + (44 + 106*s) + '"/>';
+    g += '<line x1="' + (12 + 63*s) + '" y1="' + (44 + 32*s) + '" x2="' + (75 + 63*s) + '" y2="' + (12 + 32*s) + '"/>';
+    g += '<line x1="' + (12 + 63*s) + '" y1="' + (44 - 32*s) + '" x2="' + (138 - 63*s) + '" y2="' + (44 + 32*s) + '"/>';
+  }
+  return '<svg class="svgBlok" width="150" height="190" viewBox="0 0 150 192" role="img" aria-label="satu ribuan">' +
+    '<polygon points="75,12 138,44 75,76 12,44" fill="#93c5fd" stroke="#1e40af" stroke-width="1.5" stroke-linejoin="round"/>' +
+    '<polygon points="12,44 75,76 75,182 12,150" fill="#60a5fa" stroke="#1e40af" stroke-width="1.5" stroke-linejoin="round"/>' +
+    '<polygon points="75,76 138,44 138,150 75,182" fill="#3b82f6" stroke="#1e40af" stroke-width="1.5" stroke-linejoin="round"/>' +
+    '<g stroke="rgba(255,255,255,.5)" stroke-width="1">' + g + '</g></svg>';
+}
+function ulangSvg(fungsi, jumlah){
+  var h = '';
+  for(var i = 0; i < jumlah; i++) h += fungsi();
+  return h;
+}
+
+/* ---------- Pembuat soal kuis ---------- */
+function angkaUnik(minDigit){
+  var minD = minDigit || 1;
+  var kolam = [];
+  for(var i = minD; i <= 9; i++) kolam.push(i);
+  var p = acak(kolam).slice(0, 4);
+  return p[0] * 1000 + p[1] * 100 + p[2] * 10 + p[3];
+}
+
+function soalNilaiTempat(){
+  var n = angkaUnik(1), d = angkaKeDigit(n), p = acakInt(0, 3);
+  return {
+    teks: 'Pada bilangan ' + fmt(n) + ', angka ' + d[p] + ' menempati nilai tempat ....',
+    opsi: NAMA_TEMPAT.map(function(nm, i){ return { t: nm, benar: i === p }; }),
+    bahas: 'Dihitung dari kanan: satuan, puluhan, ratusan, lalu ribuan. Angka ' + d[p] +
+           ' pada bilangan ' + fmt(n) + ' berada di tempat ' + NAMA_TEMPAT[p] + '.'
+  };
+}
+function soalNilaiAngka(){
+  var n = angkaUnik(1), d = angkaKeDigit(n), p = acakInt(0, 3);
+  return {
+    teks: 'Nilai angka ' + d[p] + ' pada bilangan ' + fmt(n) + ' adalah ....',
+    opsi: MULTI.map(function(m){ return { t: fmt(d[p] * m), benar: m === MULTI[p] }; }),
+    bahas: 'Angka ' + d[p] + ' menempati tempat ' + NAMA_TEMPAT[p] + ', sehingga nilainya ' +
+           d[p] + ' \u00d7 ' + fmt(MULTI[p]) + ' = ' + fmt(d[p] * MULTI[p]) + '.'
+  };
+}
+function soalBentukPanjang(){
+  var n = angkaUnik(1), d = angkaKeDigit(n);
+  var perms = [[1000,100,10,1],[1000,10,100,1],[100,1000,1,10],[10,1,1000,100]];
+  return {
+    teks: 'Bentuk panjang dari bilangan ' + fmt(n) + ' adalah ....',
+    opsi: perms.map(function(pm, i){
+      return { t: pm.map(function(m, j){ return fmt(d[j] * m); }).join(' + '), benar: i === 0 };
+    }),
+    bahas: 'Bilangan ' + fmt(n) + ' terdiri dari ' + d[0] + ' ribuan, ' + d[1] + ' ratusan, ' +
+           d[2] + ' puluhan, dan ' + d[3] + ' satuan, sehingga bentuk panjangnya ' +
+           fmt(d[0]*1000) + ' + ' + fmt(d[1]*100) + ' + ' + fmt(d[2]*10) + ' + ' + d[3] + '.'
+  };
+}
+var PERM_INDEKS = [[0,1,2,3],[3,2,1,0],[0,2,1,3],[1,0,3,2]];
+function soalMembaca(){
+  var n = angkaUnik(2), d = angkaKeDigit(n);
+  var nilai = function(perm){
+    var v = perm.map(function(i){ return d[i]; });
+    return v[0]*1000 + v[1]*100 + v[2]*10 + v[3];
+  };
+  return {
+    teks: 'Bilangan ' + fmt(n) + ' dibaca ....',
+    opsi: PERM_INDEKS.map(function(pm, i){
+      return { t: kapital(terbilang(nilai(pm))), benar: i === 0 };
+    }),
+    bahas: 'Baca sesuai nilai tempatnya, mulai dari ribuan: ' + d[0] + ' ribu, ' + d[1] + ' ratus, ' +
+           d[2] + ' puluh, ' + d[3] + ' \u2014 "' + kapital(terbilang(n)) + '".'
+  };
+}
+function soalMenulis(){
+  var n = angkaUnik(2), d = angkaKeDigit(n);
+  var nilai = function(perm){
+    var v = perm.map(function(i){ return d[i]; });
+    return v[0]*1000 + v[1]*100 + v[2]*10 + v[3];
+  };
+  return {
+    teks: 'Bilangan yang dibaca "' + kapital(terbilang(n)) + '" ditulis dengan angka ....',
+    opsi: PERM_INDEKS.map(function(pm, i){
+      return { t: fmt(nilai(pm)), benar: i === 0 };
+    }),
+    bahas: 'Ubah setiap kata: ' + d[0] + ' ribu = ' + fmt(d[0]*1000) + ', ' + d[1] + ' ratus = ' +
+           fmt(d[1]*100) + ', ' + d[2] + ' puluh ' + d[3] + ' = ' + fmt(d[2]*10 + d[3]) +
+           '. Jumlahkan semuanya: ' + fmt(n) + '.'
+  };
+}
+function soalBanyak(){
+  var pakaiRatusan = Math.random() < 0.5;
+  var nama, pembagi, k;
+  if(pakaiRatusan){ nama = 'ratusan'; pembagi = 100; k = acakInt(12, 99); }
+  else { nama = 'puluhan'; pembagi = 10; k = acakInt(105, 995); }
+  var n = k * pembagi;
+  return {
+    teks: 'Banyaknya ' + nama + ' yang terdapat dalam bilangan ' + fmt(n) + ' adalah ....',
+    opsi: [
+      { t: String(k), benar: true },
+      { t: String(Math.floor(k / 10)), benar: false },
+      { t: String(k * 10), benar: false },
+      { t: String(k + 10), benar: false }
+    ],
+    bahas: fmt(n) + ' = ' + k + ' \u00d7 ' + fmt(pembagi) + ', jadi banyaknya ' + nama + ' dalam bilangan tersebut ada ' + k + '.'
+  };
+}
+function soalAngkaDariTempat(){
+  var n = acakInt(1023, 9876), d = angkaKeDigit(n), p = acakInt(0, 3);
+  var benarD = d[p];
+  var kolam = [];
+  for(var x = 0; x <= 9; x++) if(x !== benarD) kolam.push(x);
+  var lain = acak(kolam).slice(0, 3);
+  var opsi = [{ t: String(benarD), benar: true }];
+  for(var i = 0; i < lain.length; i++) opsi.push({ t: String(lain[i]), benar: false });
+  return {
+    teks: 'Pada bilangan ' + fmt(n) + ', angka yang menempati tempat ' + NAMA_TEMPAT[p] + ' adalah ....',
+    opsi: opsi,
+    bahas: 'Tuliskan ' + fmt(n) + ' pada tabel nilai tempat. Angka pada kolom ' + NAMA_TEMPAT[p] + ' adalah ' + benarD + '.'
+  };
+}
+function buatSoal(tipe){
+  switch(tipe){
+    case 1: return soalNilaiTempat();
+    case 2: return soalNilaiAngka();
+    case 3: return soalBentukPanjang();
+    case 4: return soalMembaca();
+    case 5: return soalMenulis();
+    case 6: return soalBanyak();
+    case 7: return soalAngkaDariTempat();
+  }
+}
+
+/* =========================================================
+   KODE HALAMAN (hanya berjalan di peramban)
+   ========================================================= */
+function initStatis(){
+  var wadah = document.getElementById('blokStatis');
+  if(!wadah) return;
+  var tempatSvg = [svgKubus, svgLempeng, svgBatang, svgSatuan];
+  var jumlah = [1, 3, 4, 2];
+  var html = '';
+  for(var i = 0; i < 4; i++){
+    html += '<div class="blok-col">' +
+      '<div class="blok-judul ' + ['c-ribuan','c-ratusan','c-puluhan','c-satuan'][i] + '" style="text-transform:uppercase">' +
+      NAMA_TEMPAT[i] + '</div>' +
+      '<div class="blok-wrap">' + ulangSvg(tempatSvg[i], jumlah[i]) + '</div>' +
+      '<p class="blok-cap">' + jumlah[i] + ' ' + NAMA_TEMPAT[i] + ' = ' + fmt(jumlah[i] * MULTI[i]) + '</p></div>';
+  }
+  wadah.innerHTML = html;
+}
+
+var angkaLab = 2475;
+var SVG_LAB = [svgKubus, svgLempeng, svgBatang, svgSatuan];
+
+function renderLab(){
+  var d = angkaKeDigit(angkaLab);
+  document.getElementById('labAngka').textContent = fmt(angkaLab);
+  document.getElementById('labSlider').value = String(angkaLab);
+  for(var i = 0; i < 4; i++){
+    var dg = document.getElementById('dg' + i);
+    dg.textContent = d[i];
+    dg.classList.remove('pop');
+    void dg.offsetWidth;
+    dg.classList.add('pop');
+    document.getElementById('tc' + i).textContent = d[i];
+    document.getElementById('tv' + i).textContent = fmt(d[i] * MULTI[i]);
+    var tPlus = document.getElementById('plus' + i);
+    var tMin = document.getElementById('minus' + i);
+    tPlus.disabled = angkaLab + MULTI[i] > 9999;
+    tMin.disabled = angkaLab - MULTI[i] < 0;
+    var wrap = document.getElementById('b' + i);
+    wrap.innerHTML = d[i] === 0 ? '<span class="kosong">tidak ada</span>' : ulangSvg(SVG_LAB[i], d[i]);
+    document.getElementById('bc' + i).textContent = d[i] + ' ' + NAMA_TEMPAT[i] + ' = ' + fmt(d[i] * MULTI[i]);
+  }
+  var teks = d.map(function(x, i){
+    var v = x * MULTI[i];
+    return '<span class="' + ['r-ribuan','r-ratusan','r-puluhan','r-satuan'][i] + (v === 0 ? ' nol' : '') + '">' + fmt(v) + '</span>';
+  });
+  document.getElementById('labPanjang').innerHTML =
+    '<span class="r-bil">' + fmt(angkaLab) + '</span><span class="r-op">=</span>' +
+    teks.join('<span class="r-op">+</span>');
+  document.getElementById('labBaca').textContent = '"' + kapital(terbilang(angkaLab)) + '"';
+}
+function ubahLab(mult, delta){
+  var baru = angkaLab + delta * mult;
+  if(baru < 0) baru = 0;
+  if(baru > 9999) baru = 9999;
+  angkaLab = baru;
+  renderLab();
+}
+function initLab(){
+  renderLab();
+  var i;
+  for(i = 0; i < 4; i++){
+    (function(m){
+      document.getElementById('plus' + m).addEventListener('click', function(){ ubahLab(MULTI[m], 1); });
+      document.getElementById('minus' + m).addEventListener('click', function(){ ubahLab(MULTI[m], -1); });
+    })(i);
+  }
+  document.getElementById('labSlider').addEventListener('input', function(){
+    angkaLab = parseInt(this.value, 10);
+    renderLab();
+  });
+  document.getElementById('btnAcak').addEventListener('click', function(){
+    angkaLab = acakInt(0, 9999);
+    renderLab();
+  });
+  document.getElementById('btnNol').addEventListener('click', function(){
+    angkaLab = 0;
+    renderLab();
+  });
+  var presets = document.querySelectorAll('.preset');
+  for(var j = 0; j < presets.length; j++){
+    presets[j].addEventListener('click', function(){
+      angkaLab = parseInt(this.getAttribute('data-n'), 10);
+      renderLab();
+    });
+  }
+}
+
+/* ---------- Kuis ---------- */
+var kuisSoal = [], kuisIdx = 0, kuisSkor = 0, kuisHasil = [];
+
+function tampilIntroKuis(){
+  var kotak = document.getElementById('kuisBox');
+  kotak.innerHTML =
+    '<div class="kuis-intro">' +
+    '<h3>Siap Menguji Kemampuanmu?</h3>' +
+    '<p>Ada <b>10 soal pilihan ganda</b> tentang nilai tempat, nilai angka, bentuk panjang, serta membaca dan menulis bilangan sampai 9.999.</p>' +
+    '<p>Pilih satu jawaban pada setiap soal. Setelah menjawab, pembahasan akan langsung muncul agar kamu tahu alasannya.</p>' +
+    '<button class="btn-mulai" id="btnMulai" type="button">Mulai Kuis</button>' +
+    '</div>';
+  document.getElementById('btnMulai').addEventListener('click', mulaiKuis);
+}
+function mulaiKuis(){
+  var tipe = acak([1, 7, 2, 2, 3, 3, 4, 4, 5, 6]);
+  kuisSoal = tipe.map(function(t){
+    var s = buatSoal(t);
+    s.opsi = acak(s.opsi);
+    return s;
+  });
+  kuisIdx = 0; kuisSkor = 0; kuisHasil = [];
+  renderSoal();
+}
+function renderSoal(){
+  var s = kuisSoal[kuisIdx];
+  var kotak = document.getElementById('kuisBox');
+  var opsiHtml = s.opsi.map(function(o, i){
+    return '<button class="opsi" data-i="' + i + '" type="button">' +
+      '<span class="huruf">' + 'ABCD'[i] + '</span><span>' + o.t + '</span></button>';
+  }).join('');
+  kotak.innerHTML =
+    '<div class="kuis-atas">' +
+    '<span>Soal ' + (kuisIdx + 1) + ' dari ' + kuisSoal.length + '</span>' +
+    '<span>Skor sementara: ' + kuisSkor + '</span></div>' +
+    '<div class="pbar"><div class="pfill" style="width:' + (kuisIdx / kuisSoal.length * 100) + '%"></div></div>' +
+    '<p class="kuis-teks">' + s.teks + '</p>' +
+    '<div class="opsi-wrap">' + opsiHtml + '</div>' +
+    '<div id="kuisFb"></div>';
+  var tombol = kotak.querySelectorAll('.opsi');
+  for(var i = 0; i < tombol.length; i++){
+    tombol[i].addEventListener('click', function(){ jawabSoal(parseInt(this.getAttribute('data-i'), 10)); });
+  }
+}
+function jawabSoal(pilihan){
+  var s = kuisSoal[kuisIdx];
+  var benar = s.opsi[pilihan].benar;
+  var teksBenar = '';
+  for(var i = 0; i < s.opsi.length; i++){
+    if(s.opsi[i].benar) teksBenar = s.opsi[i].t;
+  }
+  var tombol = document.querySelectorAll('#kuisBox .opsi');
+  for(var j = 0; j < tombol.length; j++){
+    tombol[j].disabled = true;
+    var idx = parseInt(tombol[j].getAttribute('data-i'), 10);
+    if(s.opsi[idx].benar) tombol[j].classList.add('benar');
+    else if(idx === pilihan) tombol[j].classList.add('salah');
+  }
+  if(benar) kuisSkor++;
+  kuisHasil.push(benar);
+  var fb = document.getElementById('kuisFb');
+  var kelas = benar ? 'fb-benar' : 'fb-salah';
+  var judul = benar ? 'Benar! Kerja bagus.' :
+    'Belum tepat. Jawaban yang benar: ' + teksBenar + '.';
+  fb.innerHTML =
+    '<div class="fb ' + kelas + '"><strong>' + judul + '</strong>' + s.bahas + '</div>' +
+    '<button class="btn-lanjut" id="btnLanjut" type="button">' +
+    (kuisIdx === kuisSoal.length - 1 ? 'Lihat Hasil' : 'Soal Berikutnya') + '</button>';
+  document.getElementById('btnLanjut').addEventListener('click', lanjutKuis);
+  fb.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+function lanjutKuis(){
+  kuisIdx++;
+  if(kuisIdx < kuisSoal.length) renderSoal();
+  else renderHasil();
+}
+function renderHasil(){
+  var total = kuisSoal.length;
+  var persen = Math.round(kuisSkor / total * 100);
+  var pesan, warna;
+  if(persen === 100){ pesan = 'Sempurna! Kamu benar-benar telah menguasai nilai tempat sampai ribuan.'; warna = '#10b981'; }
+  else if(persen >= 80){ pesan = 'Hebat! Pemahamanmu sudah sangat baik. Periksa kembali soal yang keliru, ya.'; warna = '#10b981'; }
+  else if(persen >= 60){ pesan = 'Bagus! Kamu sudah memahami dasarnya. Pelajari kembali bagian yang masih keliru.'; warna = '#f59e0b'; }
+  else if(persen >= 40){ pesan = 'Cukup baik. Baca ulang materi di atas pelan-pelan, lalu coba kuis ini sekali lagi.'; warna = '#f59e0b'; }
+  else { pesan = 'Jangan menyerah! Mulailah dari bagian Pengantar, coba Laboratorium Nilai Tempat, lalu ulangi kuis ini.'; warna = '#ef4444'; }
+  var C = 2 * Math.PI * 54;
+  var off = C * (1 - persen / 100);
+  var daftar = kuisHasil.map(function(h, i){
+    return '<div class="hasil-item"><span>Soal ' + (i + 1) + '</span>' +
+      '<span class="' + (h ? 'h-ok' : 'h-no') + '">' + (h ? 'Benar' : 'Salah') + '</span></div>';
+  }).join('');
+  document.getElementById('kuisBox').innerHTML =
+    '<div class="hasil">' +
+    '<svg width="150" height="150" viewBox="0 0 140 140" role="img" aria-label="Skor kuis">' +
+    '<circle cx="70" cy="70" r="54" fill="none" stroke="#e2e8f0" stroke-width="12"/>' +
+    '<circle cx="70" cy="70" r="54" fill="none" stroke="' + warna + '" stroke-width="12" stroke-linecap="round" ' +
+    'stroke-dasharray="' + C + '" stroke-dashoffset="' + off + '" transform="rotate(-90 70 70)"/>' +
+    '<text x="70" y="70" text-anchor="middle" font-size="28" font-weight="800" fill="#1e293b">' + persen + '%</text>' +
+    '<text x="70" y="90" text-anchor="middle" font-size="12" fill="#64748b">' + kuisSkor + ' dari ' + total + ' benar</text>' +
+    '</svg>' +
+    '<h3>' + kuisSkor + ' dari ' + total + ' Soal Benar</h3>' +
+    '<p class="hasil-pesan">' + pesan + '</p>' +
+    '<div class="hasil-list">' + daftar + '</div>' +
+    '<button class="btn-ulang" id="btnUlang" type="button">Ulangi Kuis dengan Soal Baru</button>' +
+    '</div>';
+  document.getElementById('btnUlang').addEventListener('click', mulaiKuis);
+}
+function initKuis(){ tampilIntroKuis(); }
+
+if(typeof document !== 'undefined' && document.addEventListener){
+  document.addEventListener('DOMContentLoaded', function(){
+    initStatis();
+    initLab();
+    initKuis();
+  });
+}
+</script>
+</body>
+</html>
